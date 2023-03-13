@@ -1,0 +1,28 @@
+Auto auto = new Employee("Марк","2");
+auto.Print();
+class Auto
+{
+    public string Name { get; set; }
+    public Auto(string name)
+    {
+        Name = name;
+    }
+    public virtual void Print()
+    {
+        Console.WriteLine(Name);
+    }
+
+}
+class Employee : Auto
+    {
+        public string Model { get; set; }
+        public Employee(string name, string model) : base(name)
+        {
+            Model = model;
+        }
+    public override void Print()
+        {
+            Console.WriteLine($"Auto {Name}, Model {Model}");
+        }
+
+}
